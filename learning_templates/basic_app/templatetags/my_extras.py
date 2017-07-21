@@ -1,0 +1,11 @@
+from django import template
+register = template.Library()
+
+@register.filer(name='cut')
+def cut(value,arg):
+    """
+    this cuts out all values of "arg" form the string
+
+    """
+    return value.replace(arg,'')
+# register.filter('cut',cut)
